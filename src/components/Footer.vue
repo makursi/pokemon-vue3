@@ -15,19 +15,18 @@
           
           <!-- 作者信息 -->
           <div class="author-info mb-4">
-            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-1">Pokemon Enthusiast</h3>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-1">ChoriaKiinweill</h3>
             <p class="text-gray-600 dark:text-gray-300">Frontend Developer & Pokemon Trainer</p>
           </div>
           
           <!-- GitHub链接 -->
           <a 
-            href="https://github.com" 
+            href="https://github.com/makursi" 
             target="_blank" 
             rel="noopener noreferrer"
             class="github-link flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-md transition-colors"
           >
-            <span class="text-lg">📱</span>
-
+            <img src="/github.svg" alt="GitHub" class="w-5 h-5" />
           </a>
         </div>
       </div>

@@ -9,14 +9,14 @@
         
         <!-- 右侧：图标导航和主题切换 -->
         <div class="flex items-center gap-3">
-          <!-- 亮暗模式切换 (圆角小正方形) -->
+          <!-- 亮暗模式切换 (现代化按钮) -->
           <button 
             @click="toggleTheme" 
-            class="theme-toggle flex items-center justify-center w-8 h-8 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            class="theme-toggle flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-gray-800 shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-700 transition-all duration-300"
             title="Toggle Theme"
           >
-            <span v-if="isDark" class="text-sm text-yellow-400">☀️</span>
-            <span v-else class="text-sm text-gray-600">🌙</span>
+            <span v-if="isDark" class="text-yellow-400 transition-colors duration-300">☀️</span>
+            <span v-else class="text-gray-600 dark:text-gray-300 transition-colors duration-300">🌙</span>
           </button>
           
           <!-- 图标导航栏 (最右侧) -->
@@ -28,7 +28,7 @@
               class="nav-icon"
               title="GitHub"
             >
-              <span class="text-lg hover:text-gray-600 dark:hover:text-gray-300 transition-colors">📱</span>
+              <img src="/github.svg" alt="GitHub" class="w-6 h-6 hover:opacity-80 transition-opacity" />
             </a>
             <a 
               href="https://bilibili.com" 
@@ -37,7 +37,7 @@
               class="nav-icon"
               title="Bilibili"
             >
-              <span class="text-lg text-pink-500 hover:text-pink-600 transition-colors">📺</span>
+              <img src="/bilibili-color.svg" alt="Bilibili" class="w-6 h-6 hover:opacity-80 transition-opacity" />
             </a>
           </nav>
         </div>
