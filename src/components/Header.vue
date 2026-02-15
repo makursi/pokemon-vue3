@@ -12,7 +12,7 @@
           <!-- 亮暗模式切换 (现代化按钮) -->
           <button 
             @click="toggleTheme" 
-            class="theme-toggle flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-gray-800 shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-700 transition-all duration-300"
+            class="theme-toggle flex items-center justify-center w-10 h-10 rounded bg-white dark:bg-gray-800 shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-700 transition-all duration-300"
             title="Toggle Theme"
           >
             <span v-if="isDark" class="text-yellow-400 transition-colors duration-300">☀️</span>
@@ -123,7 +123,4 @@ onMounted(() => {
   transition: all 0.2s ease;
 }
 
-.theme-toggle:hover {
-  transform: rotate(15deg);
-}
 </style>
