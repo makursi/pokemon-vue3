@@ -1,51 +1,62 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import usePokemon from '../hooks/usePokemon'
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 const pokemonName = ref('pikachu')
 const { data, loading, error } = usePokemon(pokemonName);
 
 </script>
 
 <template>
-  <div id="app" class="min-h-screen bg-gradient-to-br from-blue-100 to-blue-200 py-8 px-4">
-    <div class="container">
-      <div class="card card-hover mb-8">
-        <h1 v-if="loading" class="text-2xl font-bold text-gray-800 mb-5 text-center">Loading...</h1>
-        <h1 v-else-if="error" class="text-2xl font-bold text-red-500 mb-5 text-center">Error: {{ error }}</h1>
-        <div v-else-if="data" class="text-center">
-          <h1 class="text-3xl font-bold text-gray-800 mb-4">{{ data.name.charAt(0).toUpperCase() + data.name.slice(1) }}</h1>
-          <div class="description text-gray-600 mb-6">
-            <p class="mb-2"><strong>ID:</strong> #{{ data.id }}</p>
-            <p class="mb-2"><strong>Types:</strong>
-              <span v-for="typeInfo in data.types" :key="typeInfo.slot" class="inline-flex">
-                <span :class="['type-tag', `bg-type-${typeInfo.type.name}`]" class="text-white mr-2">
-                  {{ typeInfo.type.name.charAt(0).toUpperCase() + typeInfo.type.name.slice(1) }}
+  <div id="app" class="min-h-screen flex flex-col">
+    <!-- Header组件 -->
+    <Header />
+    
+    <!-- 主内容区域 -->
+    <main class="flex-1 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-gray-900 dark:to-gray-800 py-8 px-4">
+      <div class="container">
+        <div class="card card-hover mb-8 dark:bg-gray-800 dark:border-gray-700">
+          <h1 v-if="loading" class="text-2xl font-bold text-gray-800 dark:text-white mb-5 text-center">Loading...</h1>
+          <h1 v-else-if="error" class="text-2xl font-bold text-red-500 mb-5 text-center">Error: {{ error }}</h1>
+          <div v-else-if="data" class="text-center">
+            <h1 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">{{ data.name.charAt(0).toUpperCase() + data.name.slice(1) }}</h1>
+            <div class="description text-gray-600 dark:text-gray-300 mb-6">
+              <p class="mb-2"><strong>ID:</strong> #{{ data.id }}</p>
+              <p class="mb-2"><strong>Types:</strong>
+                <span v-for="typeInfo in data.types" :key="typeInfo.slot" class="inline-flex">
+                  <span :class="['type-tag', `bg-type-${typeInfo.type.name}`]" class="text-white mr-2">
+                    {{ typeInfo.type.name.charAt(0).toUpperCase() + typeInfo.type.name.slice(1) }}
+                  </span>
                 </span>
-              </span>
-            </p>
+              </p>
+            </div>
+            <img :src="data.sprites.other['official-artwork'].front_default" :alt="data.name"
+              class="w-64 h-auto mx-auto mb-4" />
           </div>
-          <img :src="data.sprites.other['official-artwork'].front_default" :alt="data.name"
-            class="w-64 h-auto mx-auto mb-4" />
+        </div>
+        <div class="card card-hover dark:bg-gray-800 dark:border-gray-700">
+          <h1 class="text-2xl font-bold text-center text-gray-800 dark:text-white mb-6">Go Search Your Pokemon's Information</h1>
+          <label for="poke-input" class="block mb-4 text-center">
+            <span class="mr-2 font-medium text-gray-700 dark:text-gray-300">Please input its En name:</span>
+            <input id="poke-input" 
+              type="text" 
+              v-model="pokemonName" 
+              class="px-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent w-64"
+              placeholder="e.g. pikachu"
+            />
+          </label>
+          <h2 class="text-center mt-4">
+            <a href="https://wiki.52poke.com/wiki/" class="text-primary hover:text-primary/80 underline transition-colors">
+              Go check out all the data of pokemon
+            </a>
+          </h2>
         </div>
       </div>
-      <div class="card card-hover">
-        <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Go Search Your Pokemon's Information</h1>
-        <label for="poke-input" class="block mb-4 text-center">
-          <span class="mr-2 font-medium">Please input its En name:</span>
-          <input id="poke-input" 
-            type="text" 
-            v-model="pokemonName" 
-            class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent w-64"
-            placeholder="e.g. pikachu"
-          />
-        </label>
-        <h2 class="text-center mt-4">
-          <a href="https://wiki.52poke.com/wiki/" class="text-primary hover:text-primary/80 underline transition-colors">
-            Go check out all the data of pokemon
-          </a>
-        </h2>
-      </div>
-    </div>
+    </main>
+    
+    <!-- Footer组件 -->
+    <Footer />
   </div>
 </template>
 
