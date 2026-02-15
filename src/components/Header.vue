@@ -1,46 +1,46 @@
 <template>
   <header class="header bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-50">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-      <!-- 左侧：Logo -->
-      <div class="flex items-center gap-2">
-        <span class="text-2xl text-primary">🔴</span>
-        <h1 class="text-xl font-bold text-gray-800 dark:text-white">Pokemon Info</h1>
-      </div>
-      
-      <!-- 右侧：图标导航和主题切换 -->
-      <div class="flex items-center gap-3">
-        <!-- 亮暗模式切换 (圆角小正方形) -->
-        <button 
-          @click="toggleTheme" 
-          class="theme-toggle flex items-center justify-center w-8 h-8 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-          title="Toggle Theme"
-        >
-          <span v-if="isDark" class="text-sm text-yellow-400">☀️</span>
-          <span v-else class="text-sm text-gray-600">🌙</span>
-        </button>
+      <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <span class="text-2xl text-primary">🔴</span>
+          <h1 class="text-xl font-bold text-gray-800 dark:text-white">Pokemon Info</h1>
+        </div>
         
-        <!-- 图标导航栏 (最右侧) -->
-        <nav class="flex items-center gap-3">
-          <a 
-            href="https://github.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="nav-icon"
-            title="GitHub"
+        <!-- 右侧：图标导航和主题切换 -->
+        <div class="flex items-center gap-3">
+          <!-- 亮暗模式切换 (圆角小正方形) -->
+          <button 
+            @click="toggleTheme" 
+            class="theme-toggle flex items-center justify-center w-8 h-8 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            title="Toggle Theme"
           >
-            <span class="text-lg hover:text-gray-600 dark:hover:text-gray-300 transition-colors">📱</span>
-          </a>
-          <a 
-            href="https://bilibili.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="nav-icon"
-            title="Bilibili"
-          >
-            <span class="text-lg text-pink-500 hover:text-pink-600 transition-colors">📺</span>
-          </a>
-        </nav>
-      </div>
+            <span v-if="isDark" class="text-sm text-yellow-400">☀️</span>
+            <span v-else class="text-sm text-gray-600">🌙</span>
+          </button>
+          
+          <!-- 图标导航栏 (最右侧) -->
+          <nav class="flex items-center gap-3">
+            <a 
+              href="https://github.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="nav-icon"
+              title="GitHub"
+            >
+              <span class="text-lg hover:text-gray-600 dark:hover:text-gray-300 transition-colors">📱</span>
+            </a>
+            <a 
+              href="https://bilibili.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="nav-icon"
+              title="Bilibili"
+            >
+              <span class="text-lg text-pink-500 hover:text-pink-600 transition-colors">📺</span>
+            </a>
+          </nav>
+        </div>
     </div>
   </header>
 </template>

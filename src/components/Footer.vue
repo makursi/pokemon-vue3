@@ -7,7 +7,7 @@
           <!-- 头像 -->
           <div class="avatar mb-4">
             <img 
-              src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20developer%20avatar%2C%20friendly%20smile%2C%20minimalist%20style&image_size=square" 
+              src="../../public/avatar.webp" 
               alt="Author Avatar" 
               class="w-24 h-24 rounded-full object-cover border-4 border-primary/20 shadow-md"
             />
@@ -27,7 +27,7 @@
             class="github-link flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-md transition-colors"
           >
             <span class="text-lg">📱</span>
-            <span>GitHub Profile</span>
+
           </a>
         </div>
       </div>
