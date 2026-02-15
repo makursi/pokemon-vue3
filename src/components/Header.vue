@@ -22,7 +22,7 @@
           <!-- 图标导航栏 (最右侧) -->
           <nav class="flex items-center gap-3">
             <a 
-              href="https://github.com" 
+              href="https://github.com/makursi" 
               target="_blank" 
               rel="noopener noreferrer"
               class="nav-icon"
@@ -31,7 +31,7 @@
               <img src="/github.svg" alt="GitHub" class="w-6 h-6 hover:opacity-80 transition-opacity" />
             </a>
             <a 
-              href="https://bilibili.com" 
+              href="https://space.bilibili.com/108152994?spm_id_from=333.1007.0.0" 
               target="_blank" 
               rel="noopener noreferrer"
               class="nav-icon"
