@@ -50,7 +50,7 @@ const { data: pokemonData, loading: loadingState, error: errorState } = usePokem
           </label>
           <h2 class="text-center mt-4"> 
             <a href="https://wiki.52poke.com/wiki/" class="text-primary hover:text-primary/80 underline transition-colors">
-              Go check out all the data of {{ pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1) }}
+              Go check out all the data of pokemon
             </a>  
           </h2>
         </div>
