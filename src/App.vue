@@ -3,8 +3,7 @@ import { ref } from 'vue'
 import usePokemon from '../hooks/usePokemon'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
-
-// Pokemon名称
+// 默认Pokemon名称
 const pokemonName = ref('pikachu')
 
 // 使用usePokemon hook获取数据
